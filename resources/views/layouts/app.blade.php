@@ -18,7 +18,9 @@
         
         <nav class="flex gap-6 items-center">
           <a class="font-bold uppercase text-gray-600 text-sm" href="#">Login</a>
-          <a class="font-bold uppercase text-gray-600 text-sm" href="#">Crear Cuenta</a>
+          <a class="font-bold uppercase text-gray-600 text-sm" href="/crear-cuenta">
+            Crear Cuenta
+          </a>
         </nav>
         
       </div>
