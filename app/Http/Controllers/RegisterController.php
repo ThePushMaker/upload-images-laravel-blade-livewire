@@ -16,6 +16,10 @@ class RegisterController extends Controller
     
     public function store(Request $request)
     {
+        
+        // modificar el request
+        $request->request->add(['username' => Str::slug($request->username)]);
+        
         // validación
         $validated = $request->validate([
             'name' => ['required', 'max:30'],
@@ -26,9 +30,9 @@ class RegisterController extends Controller
         
         User::create([
            'name' => $request->name,
-           'username' => Str::slug($request->username),
+           'username' => $request->username,
            'email' => $request->email,
-           'password' => Hash::make($request->password)
+           'password' => Hash::make($request->password) 
         ]);
     }
 }
