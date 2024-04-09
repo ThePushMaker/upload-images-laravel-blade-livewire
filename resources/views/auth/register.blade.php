@@ -46,7 +46,8 @@
             name="username"
             type="text"
             placeholder="Tu Nombre de Usuario"
-            class="border p-3 w-full rounded-lg"
+            class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror"
+            value="{{ old('username') }}"
           />
           
           @error('username')
@@ -65,7 +66,8 @@
             name="email"
             type="email"
             placeholder="Tu Correo Electrónico"
-            class="border p-3 w-full rounded-lg"
+            class="border p-3 w-full rounded-lg @error('email') border-red-500 @enderror"
+            value="{{ old('email') }}"
           />
           @error('email')
             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
@@ -83,7 +85,7 @@
             name="password"
             type="password"
             placeholder="Contraseña de Registro"
-            class="border p-3 w-full rounded-lg"
+            class="border p-3 w-full rounded-lg @error('password') border-red-500 @enderror"
           />
           
           @error('password')
