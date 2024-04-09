@@ -48,6 +48,12 @@
             placeholder="Tu Nombre de Usuario"
             class="border p-3 w-full rounded-lg"
           />
+          
+          @error('username')
+            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+              {{ $message }}
+            </p>
+          @enderror
         </div>
         
         <div class="mb-5">
@@ -61,6 +67,11 @@
             placeholder="Tu Correo Electrónico"
             class="border p-3 w-full rounded-lg"
           />
+          @error('email')
+            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+              {{ $message }}
+            </p>
+          @enderror
         </div>
         
         <div class="mb-5">
@@ -74,6 +85,12 @@
             placeholder="Contraseña de Registro"
             class="border p-3 w-full rounded-lg"
           />
+          
+          @error('password')
+            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+              {{ $message }}
+            </p>
+          @enderror
         </div>
         
         <div class="mb-5">
