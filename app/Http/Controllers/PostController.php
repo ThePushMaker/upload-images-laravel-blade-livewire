@@ -8,7 +8,7 @@ class PostController extends Controller
 {
     public function __construct()
     {
-        $this->middlename('auth');
+        $this->middleware('auth');
     }
     
     public function index()
