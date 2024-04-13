@@ -18,7 +18,7 @@
         </h1>
         
         <nav class="flex gap-6 items-center">
-          <a class="font-bold uppercase text-gray-600 text-sm" href="#">Login</a>
+          <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('login') }}">Login</a>
           <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">
             Crear Cuenta
           </a>
@@ -35,7 +35,7 @@
     </main>
     
     <footer class="text-center p-5 text-gray-500 font-bold uppercase">
-      DevStagram - Todos los derechos reservados 
+      DevStagram - Todos los derechos reservados
       {{ now()->year }}
     </footer>
     

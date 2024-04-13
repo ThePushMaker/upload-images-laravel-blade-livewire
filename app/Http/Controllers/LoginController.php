@@ -10,4 +10,12 @@ class LoginController extends Controller
     {
         return view('auth.login');
     }
+    
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+           'email' => 'required|email',
+           'password' => 'required' 
+        ]);
+    }
 }
