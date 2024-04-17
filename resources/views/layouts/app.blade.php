@@ -26,9 +26,12 @@
               </span>
             </a>
             
-            <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('logout') }}">
-              Cerrar Sesión
-            </a>
+            <form method="POST" action="{{ route('logout') }}">
+              @csrf
+              <button class="font-bold uppercase text-gray-600 text-sm" href="{{ route('logout') }}">
+                Cerrar Sesión
+              </button>
+            </form>
           </nav>
         @endauth
         @guest
