@@ -12,14 +12,14 @@ class LoginController extends Controller
     }
     
     public function store(Request $request)
-    {
+    {        
         $validated = $request->validate([
            'email' => 'required|email',
            'password' => 'required' 
         ]);
         
         // si no coinciden las credenciales
-        if(!auth()->attempt($request->only('email', 'password'))) {
+        if(!auth()->attempt($request->only('email', 'password'), $request->remember)) {
           return back()->with('mensaje', 'Credenciales Incorrectas');
         }
         
