@@ -18,6 +18,7 @@
         id="dropzone" 
         class="dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center"
       >
+        @csrf
 
       </form>
     </div>
