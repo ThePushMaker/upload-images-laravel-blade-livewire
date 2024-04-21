@@ -8,7 +8,6 @@
     @stack('styles')
     <title>Devstagram - @yield('titulo')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="{{ asset('js/app.js') }}" defer></script>
   </head>
   <body class="bg-gray-100">
     
