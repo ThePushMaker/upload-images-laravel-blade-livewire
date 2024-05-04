@@ -18,7 +18,7 @@ class ImagenController extends Controller
         // la imagen se almacena en el servidor y se redimensiona
         $imagenServidor = Image::make($imagen);
         $imagenServidor->fit(1000, 1000);
-
+ 
         // creamos el path donde se guardará la imagen y se guarda allí
         $imagenPath = public_path('uploads') . '/' . $nombreImagen;
         $imagenServidor->save($imagenPath);
