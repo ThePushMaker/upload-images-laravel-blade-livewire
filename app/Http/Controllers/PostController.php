@@ -18,4 +18,12 @@ class PostController extends Controller
     {
         return view('posts.create');
     }
+    public function store(Request $request)
+    {
+        // validación        
+        $validated = $request->validate([
+            'titulo' => 'required|max:255',
+            'descripcion' => 'required',
+        ]);
+    }
 }
