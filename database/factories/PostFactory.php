@@ -23,7 +23,7 @@ class PostFactory extends Factory
             // uuid concatenado con '.jpg'
             'imagen' => $this->faker->uuid() . '.jpg',
             // asignar un usuario aleatorio de entre 1, 2 o 3
-            'user_id' => $this->faker->randomElement([1, 2, 3]),
+            'user_id' => $this->faker->randomElement([1]),
         ];
     }
 }
