@@ -24,6 +24,7 @@ class PostController extends Controller
         $validated = $request->validate([
             'titulo' => 'required|max:255',
             'descripcion' => 'required',
+            'imagen' => 'required'
         ]);
     }
 }

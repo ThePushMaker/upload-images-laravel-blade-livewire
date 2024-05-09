@@ -65,8 +65,18 @@
               {{ $message }}
             </p>
           @enderror
-          
-
+        </div>
+        
+        <div class="mb-5">
+          <input 
+            name="imagen"
+            type="hidden"
+          />
+          @error('imagen')
+            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+              {{ $message }}
+            </p>
+          @enderror
         </div>
         
         <input
