@@ -17,7 +17,13 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            // oracion aleatoria de 5 caracteres
+            'titulo' => $this->faker->sentence('5'),
+            'descripcion' => $this->faker->sentence('20'),
+            // uuid concatenado con '.jpg'
+            'imagen' => $this->faker->uuid() . '.jpg',
+            // asignar un usuario aleatorio de entre 1, 2 o 3
+            'user_id' => $this->faker->randomElement([1, 2, 3]),
         ];
     }
 }
