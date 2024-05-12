@@ -28,12 +28,21 @@ class PostController extends Controller
             'imagen' => 'required'
         ]);
         
+        // forma de crear registros en un DB
         Post::create([
             'titulo' => $request->titulo,
             'descripcion' => $request->descripcion,
             'imagen' => $request->imagen,
             'user_id' => auth()->user()->id
         ]);
+        
+        // otra forma de crear registros en un DB
+        // $post = new Post;
+        // $post->titulo = $request->titulo;
+        // $post->descripcion = $request->descripcion;
+        // $post->imagen = $request->imagen;
+        // $post->user_id = auth()->user()->id;
+        // $post->save();
         
         // redireccionar
         return redirect()->route('posts.index', auth()->user()->username);
