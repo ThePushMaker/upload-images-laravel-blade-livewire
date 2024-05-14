@@ -29,12 +29,12 @@ class PostController extends Controller
         ]);
         
         // forma de crear registros en un DB
-        Post::create([
-            'titulo' => $request->titulo,
-            'descripcion' => $request->descripcion,
-            'imagen' => $request->imagen,
-            'user_id' => auth()->user()->id
-        ]);
+        // Post::create([
+        //     'titulo' => $request->titulo,
+        //     'descripcion' => $request->descripcion,
+        //     'imagen' => $request->imagen,
+        //     'user_id' => auth()->user()->id
+        // ]);
         
         // otra forma de crear registros en un DB
         // $post = new Post;
@@ -43,6 +43,14 @@ class PostController extends Controller
         // $post->imagen = $request->imagen;
         // $post->user_id = auth()->user()->id;
         // $post->save();
+        
+        // tercera forma de crear registros en un DB
+        $request->user()->posts()->create([
+            'titulo' => $request->titulo,
+            'descripcion' => $request->descripcion,
+            'imagen' => $request->imagen,
+            'user_id' => auth()->user()->id
+        ]);
         
         // redireccionar
         return redirect()->route('posts.index', auth()->user()->username);
