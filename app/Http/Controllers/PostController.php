@@ -21,7 +21,7 @@ class PostController extends Controller
     }
     public function store(Request $request)
     {
-        // validación        
+        // validación
         $validated = $request->validate([
             'titulo' => 'required|max:255',
             'descripcion' => 'required',
