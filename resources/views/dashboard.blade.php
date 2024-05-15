@@ -53,6 +53,10 @@
             </div>
           @endforeach
         </div>
+        
+        <div>
+          {{ $posts->links('pagination::tailwind') }}
+        </div>
       
       @else
         <p class="text-center text-gray-600 uppercase text-sm font-bold">No hay publicaciones aún</p>
