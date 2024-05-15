@@ -22,7 +22,7 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index')->middleware('auth');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create')->middleware('auth');
-ROute::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show')->middleware('auth');
+ROute::get('/{user:username}/posts/{post}', [PostController::class, 'show'])->name('posts.show')->middleware('auth');
 
 Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.store')->middleware('auth');
 
