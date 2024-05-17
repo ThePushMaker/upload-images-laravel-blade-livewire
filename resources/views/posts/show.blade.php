@@ -30,7 +30,7 @@
         @if($post->user_id === auth()->user()->id)
           <form
             method="POST"
-            action="{{ route('posts.destroy', $post) }}"
+            action="{{ route('posts.destroy', $post) }}" 
           >
             @method('DELETE')
             @csrf

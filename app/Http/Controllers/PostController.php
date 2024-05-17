@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class PostController extends Controller
 {    
@@ -69,6 +70,10 @@ class PostController extends Controller
     
     public function destroy(Post $post)
     {
-        dd('Eliminando' . $post->id);
+        Gate::authorize('delete', $post);
+        
+        $post->delete();
+        
+        return redirect()->route('posts.index', auth()->user()->username);
     }
 }
