@@ -28,7 +28,12 @@
       
       @auth
         @if($post->user_id === auth()->user()->id)
-          <form>
+          <form
+            method="POST"
+            action="{{ route('posts.destroy', $post) }}"
+          >
+            @method('DELETE')
+            @csrf
             <input 
               type="submit"
               value="Eliminar Publicación"
