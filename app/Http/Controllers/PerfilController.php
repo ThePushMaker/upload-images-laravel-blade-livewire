@@ -8,6 +8,6 @@ class PerfilController extends Controller
 {
     public function index()
     {
-        dd('pf');
+        return view('profile.index');
     }
 }

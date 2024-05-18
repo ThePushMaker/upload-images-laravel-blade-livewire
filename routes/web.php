@@ -21,8 +21,11 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
+// perfil
+Route::get('/editar-perfil', [PerfilController::class, 'index'])->name('perfil.index')->middleware('auth');
+Route::post('/editar-perfil', [PerfilController::class, 'store'])->name('perfil.store')->middleware('auth');
+
 // posts
-Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create')->middleware('auth');
 Route::get('/{user:username}/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store')->middleware('auth');
@@ -38,6 +41,5 @@ Route::post('/{user:username}/posts/{post}', [ComentarioController::class, 'stor
 Route::post('/posts/{post}/likes', [LikeController::class, 'store'])->name('posts.likes.store')->middleware('auth');
 Route::delete('/posts/{post}/likes', [LikeController::class, 'destroy'])->name('posts.likes.destroy')->middleware('auth');
 
-// perfil
-Route::get('{user:username}/editar-perfil', [PerfilController::class, 'index'])->name('perfil.index')->middleware('auth');
-Route::post('{user:username}/editar-perfil', [PerfilController::class, 'store'])->name('perfil.store')->middleware('auth');
+// posts again
+Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
