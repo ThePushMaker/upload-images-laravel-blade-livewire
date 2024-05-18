@@ -54,30 +54,32 @@
           </p>
           
           @auth
-            <form
-            method="POST" 
-            action=""
-            >
-              @csrf
-              <input 
-                type="submit"
-                class="bg-blue-600 text-white uppercase rounded-lg px-3 py-1 text-xs font-bold cursor-pointer"
-                value="Seguir"
-              />
-            </form>
+            @if(auth()->user()->id !== $user->id)
+              <form
+              method="POST" 
+              action="{{ route('users.follow', $user) }}"
+              >
+                @csrf
+                <input 
+                  type="submit"
+                  class="bg-blue-600 text-white uppercase rounded-lg px-3 py-1 text-xs font-bold cursor-pointer"
+                  value="Seguir"
+                />
+              </form>
             
-            <form
-            method="POST" 
-            action=""
-            >
-              @csrf
-              <input 
-                type="submit"
-                class="bg-red-600 text-white uppercase rounded-lg px-3 py-1 text-xs font-bold cursor-pointer"
-                value="Dejar de Seguir"
-              />
-            </form>
+              <form
+              method="POST" 
+              action=""
+              >
+                @csrf
+                <input 
+                  type="submit"
+                  class="bg-red-600 text-white uppercase rounded-lg px-3 py-1 text-xs font-bold cursor-pointer"
+                  value="Dejar de Seguir"
+                />
+              </form>
             
+            @endif
           @endauth
           
         </div>
