@@ -10,6 +10,7 @@
       <img 
         src="{{ asset('uploads') . '/' . $post->imagen }}" 
         alt="Imagen del post{{ $post->titulo }}"
+        class="rounded-md"
       />
       
       <div class="p-3 flex items-center gap-4">
@@ -81,8 +82,7 @@
     </div>
     
     <div class="md:w-1/2 p-5">
-      <div class="shadow bg-white p-5 mb-5">
-      
+      <div class="shadow bg-white p-5 mb-5 rounded-lg">
         @auth
           <p class="text-xl font-bold text-center mb-4">Comentarios</p>
           
@@ -128,7 +128,7 @@
 
         @endauth
 
-        <div class="bg-white shadow mb-5 max-h-96 overflow-y-auto mt-10">
+        <div class="bg-white shadow mb-5 max-h-[39rem] overflow-y-auto mt-10">
           @if($post->comentarios->count())
             @foreach ( $post->comentarios as $comentario)
             <div class="p-5 border-gray-300 border-b">
