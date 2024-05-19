@@ -98,7 +98,7 @@
               <a
                 href="{{ route('posts.show', [
                   'post' => $post,
-                  'user' => $user
+                  'user' => $post->user
                 ]) }}"
               >
                 <img 

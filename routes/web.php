@@ -13,7 +13,7 @@ use App\Http\Controllers\RegisterController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', HomeController::class)->name('home');
+Route::get('/', HomeController::class)->name('home')->middleware('auth');
 
 // auth
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
