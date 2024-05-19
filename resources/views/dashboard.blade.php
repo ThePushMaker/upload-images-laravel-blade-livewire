@@ -56,8 +56,8 @@
           @auth
             @if(auth()->user()->id !== $user->id)
               <form
-              method="POST" 
-              action="{{ route('users.follow', $user) }}"
+                action="{{ route('users.follow', $user) }}"
+                method="POST" 
               >
                 @csrf
                 <input 
@@ -68,10 +68,11 @@
               </form>
             
               <form
-              method="POST" 
-              action=""
+                action="{{ route('users.unfollow', $user) }}"
+                method="POST" 
               >
                 @csrf
+                @method('DELETE')
                 <input 
                   type="submit"
                   class="bg-red-600 text-white uppercase rounded-lg px-3 py-1 text-xs font-bold cursor-pointer"

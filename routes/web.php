@@ -45,7 +45,7 @@ Route::delete('/posts/{post}/likes', [LikeController::class, 'destroy'])->name('
 
 // followers
 Route::post('/{user:username}/follow', [FollowerController::class, 'store'])->name('users.follow')->middleware('auth');
-Route::delete('/user:username/unfollow', [FollowerController::class, 'destroy'])->name('users.unfollow')->middleware('auth');
+Route::delete('/{user:username}/unfollow', [FollowerController::class, 'destroy'])->name('users.unfollow')->middleware('auth');
 
 // posts again
 Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
