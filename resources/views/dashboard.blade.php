@@ -39,8 +39,8 @@
           </div>
           
           <p class="text-gray-800 text-sm mb-3 font-bold mt-5">
-            0
-            <span class="font-normal"> Seguidores</span>
+            {{ $user->followers->count() }}
+            <span class="font-normal"> @choice('Seguidor|Seguidores', $user->followers->count())</span>
           </p>
           
           <p class="text-gray-800 text-sm mb-3 font-bold">
@@ -61,7 +61,7 @@
                   method="POST" 
                 >
                   @csrf
-                  <input 
+                  <input
                     type="submit"
                     class="bg-blue-600 text-white uppercase rounded-lg px-3 py-1 text-xs font-bold cursor-pointer"
                     value="Seguir"
