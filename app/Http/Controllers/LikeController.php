@@ -7,19 +7,19 @@ use Illuminate\Http\Request;
 
 class LikeController extends Controller
 {
-    public function store(Request $request, Post $post)
-    {
-        $post->likes()->create([
-            'user_id' => auth()->user()->id
-        ]);
+    // public function store(Request $request, Post $post)
+    // {
+    //     $post->likes()->create([
+    //         'user_id' => auth()->user()->id
+    //     ]);
         
-        return back();
-    }
+    //     return back();
+    // }
     
-    public function destroy(Request $request, Post $post)
-    {
-        $request->user()->likes()->where('post_id', $post->id)->delete();
+    // public function destroy(Request $request, Post $post)
+    // {
+    //     $request->user()->likes()->where('post_id', $post->id)->delete();
         
-        return back();
-    }
+    //     return back();
+    // }
 }
