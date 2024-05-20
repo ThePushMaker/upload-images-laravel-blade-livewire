@@ -14,8 +14,16 @@
       />
       
       <div class="p-3 flex items-center gap-4">
-        <livewire:like-post :post="$post" />
+        @auth
+          <livewire:like-post :post="$post" />
+        @endauth
+        @guest
+          <p class="font-bold">{{ $post->likes->count() }}
+            <span class="font-normal">Likes</span>
+          </p>
+        @endguest
       </div>
+      
       
       <div>
         <a href="{{route('posts.index', $post->user->username)}}" class="font-bold text-blue-500 hover:text-blue-600">{{ $post->user->username }}</a>
