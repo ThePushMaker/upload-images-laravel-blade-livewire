@@ -6,5 +6,5 @@
 @endsection
 
 @section('contenido')
-  <x-listar-post />
+  <x-listar-post :posts="$posts" />
 @endsection
