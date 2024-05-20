@@ -18,7 +18,7 @@
       </div>
       
       <div>
-        <p class="font-bold">{{ $post->user->username }}</p>
+        <a href="{{route('posts.index', $post->user->username)}}" class="font-bold text-blue-500 hover:text-blue-600">{{ $post->user->username }}</a>
         <p class="text-sm text-gray-500">
           {{ $post->created_at->diffForHumans() }}
         </p>
@@ -97,7 +97,7 @@
           @if($post->comentarios->count())
             @foreach ( $post->comentarios as $comentario)
             <div class="p-5 border-gray-300 border-b">
-                <a href="{{ route('posts.index', $comentario->user) }}" class="font-bold text-blue-400">
+                <a href="{{ route('posts.index', $comentario->user) }}" class="font-bold text-blue-400 hover:text-blue-500">
                   {{ $comentario->user->username }}
                 </a>
                 <p>{{ $comentario->comentario }}</p>
